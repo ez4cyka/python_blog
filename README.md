@@ -1,0 +1,2 @@
+# python_blog
+基于flask和mysql的一个小型博客，前端使用bootstrap
