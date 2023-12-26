@@ -1,0 +1,9 @@
+Flask==3.0.0
+#安装mysqlclient 需要执行apt-get install python3-dev default-libmysqlclient-dev build-essential
+mysqlclient==2.2.0
+SQLalchemy==2.0.23
+Flask-SQLAlchemy==3.1.1
+#用户登录验证
+Flask-WTF==1.2.1
+flask-login==0.6.3
+bcrypt==4.1.1

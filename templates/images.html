@@ -1,0 +1,41 @@
+<!-- 继承base.html -->
+{% extends 'base.html' %}
+   
+{% block title%}
+
+    Ez4cyka的博客 - 图片管理
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-xl">
+    {# 这里的encodetype 要选择 "multipart/form-data" 因为包含了图片 #}
+    <form method="POST" class="form-signin" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <h1 class="h3 mb-3 font-weight-normal">
+            上传图片
+        </h1>
+        <br>
+        {{ form.image_file.label() }}
+        {{ form.image_file(class="form-control") }}
+        {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+    </form>
+    <hr/>
+    <div class="row">
+        {% if image_file_names %}
+            {% for image_file in image_file_names %}
+                <div class="col-md-3">
+                    <b>/image/{{ image_file }}</b>
+                    <img src="/image/{{ image_file }}" class="img-thumbnail my-2" alt="200x200" style="width: 300px; height: 200px;"/>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+
+
+</div>
+{% endblock %}
